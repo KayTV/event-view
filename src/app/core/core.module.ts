@@ -19,19 +19,13 @@ import { ToastModule } from './toast/toast.module';
 // exports: exports modules AND components/directives/pipes that other modules may want to use
 @NgModule({
   imports: [
-    CommonModule, FormsModule, RouterModule,
+    CommonModule, // we use ngFor
+    RouterModule, // because we use <router-outlet> and routerLink
     ModalModule, SpinnerModule, ToastModule
   ],
-  exports: [
-    CommonModule, FormsModule, RouterModule,
-    ModalModule, SpinnerModule, ToastModule, [NavComponent]
-  ],
+  exports: [ModalModule, SpinnerModule, ToastModule, NavComponent],
   declarations: [NavComponent],
-  providers: [
-    EntityService,
-    ExceptionService,
-    MessageService,
-  ]
+  providers: [EntityService, ExceptionService, MessageService ]
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

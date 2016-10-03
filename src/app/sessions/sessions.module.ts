@@ -4,15 +4,14 @@ import { SessionButtonComponent } from './shared/session-button/Session-button.c
 
 import { routedComponents, SessionsRoutingModule } from './sessions.routing';
 import { SharedModule } from '../shared/shared.module';
-import { SessionService } from './shared/session.service';  // TODO: Remove this when bug is fixed in A2 RC5
+import { SessionService } from './shared/session.service';
 
 @NgModule({
   imports: [SessionsRoutingModule, SharedModule],
   declarations: [SessionButtonComponent, routedComponents],
 
-  // TODO: Remove SessionService when bug is fixed in A2 RC5.
-  // We can put this in the component when it is fixed ... or we can do it in the module.
-  // In the module, everyone gets it everywhere tho.
+  // We can put this in the component or we can do it in the module.
+  // In the module, everyone gets it everywhere.
   providers: [SessionService]
 })
 export class SessionsModule { }
